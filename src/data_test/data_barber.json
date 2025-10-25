@@ -1,0 +1,28 @@
+[
+	{
+		"name": "Diego López",
+		"specialty": "Cortes modernos",
+		"occupation": "Barbero",
+		"stateBarber": true,
+		"ft_profile": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+		"rate": 4.6,
+		"start_time": "09:00:00",
+		"end_time": "17:00:00",
+		"branch": "Hurlingham",
+		"earnings_today": 310,
+		"customers_today": 5
+	},
+	{
+		"name": "Mateo González",
+		"specialty": "Diseño artístico",
+		"occupacion": "Barbero Creativo",
+		"stateBarber": true,
+		"ft_profile": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
+		"rate": 4.9,
+		"start_time": "12:00:00",
+		"end_time": "21:00:00",
+		"branch": "Morón",
+		"earnings_today": 390,
+		"customers_today": 6
+	}
+]
