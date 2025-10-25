@@ -5,7 +5,7 @@ export default function Layout({ children }) {
 	const location = useLocation()
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+		<div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
 			<header className="bg-slate-950 border-b border-slate-800 shadow-lg">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 					<div className="flex items-center justify-between flex-wrap gap-4">
@@ -13,7 +13,7 @@ export default function Layout({ children }) {
 							to="/"
 							className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
 						>
-							<div className="bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl p-2.5 shadow-lg">
+							<div className="bg-linear-to-br from-amber-400 to-orange-500 rounded-xl p-2.5 shadow-lg">
 								<Scissors className="h-6 w-6 text-slate-900" />
 							</div>
 							<div>
@@ -31,7 +31,7 @@ export default function Layout({ children }) {
 								to="/agendar-cita"
 								className={`flex items-center space-x-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-medium transition-all duration-200 text-sm sm:text-base ${
 									location.pathname === '/agendar-cita'
-										? 'bg-gradient-to-r from-amber-400 to-orange-500 text-slate-900 shadow-lg'
+										? 'bg-linear-to-r from-amber-400 to-orange-500 text-slate-900 shadow-lg'
 										: 'bg-slate-800 text-white border border-slate-700 hover:bg-slate-700'
 								}`}
 							>
@@ -44,7 +44,7 @@ export default function Layout({ children }) {
 								to="/ver-citas"
 								className={`flex items-center space-x-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-medium transition-all duration-200 text-sm sm:text-base ${
 									location.pathname === '/ver-citas'
-										? 'bg-gradient-to-r from-amber-400 to-orange-500 text-slate-900 shadow-lg'
+										? 'bg-linear-to-r from-amber-400 to-orange-500 text-slate-900 shadow-lg'
 										: 'bg-slate-800 text-white border border-slate-700 hover:bg-slate-700'
 								}`}
 							>
