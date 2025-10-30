@@ -4,6 +4,7 @@ import { DollarSign, Users } from 'lucide-react'
 // Componentes
 import StatCard from './StatCard'
 import Clock from './Clock'
+import Weather from './Weather'
 
 function StatsCards({ earnTod, custTod }) {
 	return (
@@ -23,6 +24,7 @@ function StatsCards({ earnTod, custTod }) {
 				value={custTod}
 			/>
 			<Clock />
+			<Weather />
 		</div>
 	)
 }
