@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router'
+
 import Layout from './components/Layout'
 import Dashboard from './pages/Dashboard'
 import SeeQuotes from './pages/SeeQuotes'
@@ -8,8 +9,8 @@ function App() {
 		<BrowserRouter>
 			<Layout>
 				<Routes>
-					<Route path="/" index element={<Dashboard />} />
-					<Route path="/ver-citas" index element={<SeeQuotes />} />
+					<Route path="/" element={<Dashboard />} />
+					<Route path="/ver-citas" element={<SeeQuotes />} />
 				</Routes>
 			</Layout>
 		</BrowserRouter>
