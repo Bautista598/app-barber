@@ -1,13 +1,16 @@
 import StatsCards from '../components/StatsCards'
 import BarberTable from '../components/BarberTable'
 
+const earnTod = 25000
+const custTod = 75
+
 function Dashboard() {
 	return (
 		<>
 			<div className="min-h-screen ">
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 					<div className="mb-8">
-						<StatsCards />
+						<StatsCards earnTod={earnTod} custTod={custTod} />
 					</div>
 
 					<div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
