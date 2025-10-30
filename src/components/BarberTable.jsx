@@ -12,6 +12,9 @@ function BarberTable() {
 		const loadData = async () => {
 			try {
 				const res = await fetch('/data_test/data_barber.json')
+
+				if (!res.ok) throw new Error(`Error HTTP: ${res.status}`)
+
 				const data = await res.json()
 				setBarberos(Array.isArray(data) ? data : data.barberos ?? [])
 			} catch (err) {
