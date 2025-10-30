@@ -5,9 +5,9 @@ function Clock() {
 	const { formatTime, formatDate } = useClock()
 
 	return (
-		<div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-lg border border-slate-700 p-5 sm:p-6 hover:shadow-xl transition-all duration-200 hover:border-amber-400">
+		<div className="bg-linear-to-br from-slate-800 to-slate-900 rounded-2xl shadow-lg border border-slate-700 p-5 sm:p-6 hover:shadow-xl transition-all duration-200 hover:border-amber-400">
 			<div className="flex items-center justify-between mb-4">
-				<div className="bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl p-2.5 shadow-lg">
+				<div className="bg-linear-to-br from-amber-400 to-orange-500 rounded-xl p-2.5 shadow-lg">
 					<ClockIcon className="h-5 w-5 sm:h-6 sm:w-6 text-slate-900" />{' '}
 					{/* ✅ Usa el ícono, no el componente */}
 				</div>
