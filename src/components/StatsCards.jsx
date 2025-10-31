@@ -8,7 +8,7 @@ import Weather from './Weather'
 
 function StatsCards({ earnTod, custTod }) {
 	return (
-		<div className="grid gap-6 sm:grid-cols-2">
+		<div className="grid gap-6 sm:grid-cols-4">
 			<StatCard
 				icon={DollarSign}
 				gradient="green"
