@@ -20,9 +20,9 @@
 			"price": 350.0
 		},
 		"branch": {
-			"nombre": "Castelar",
-			"direccion": "Arias 3200, Castelar",
-			"telefono": "+54 11 4624-9012"
+			"name": "Castelar",
+			"addres": "Arias 3200, Castelar",
+			"phone": "+54 11 4624-9012"
 		},
 		"date_time": "2025-11-01T10:00:00-03:00",
 		"status": "pendiente"
