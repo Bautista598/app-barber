@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Corte de Cabello",
+		"description": "Corte básico de cabello",
+		"price": 350,
+		"duration_minuts": 60,
+		"state": true,
+		"created_at": {
+			"$date": "2025-10-10T09:00:00.000Z"
+		}
+	},
+	{
+		"name": "Corte + Barba",
+		"description": "Corte de cabello más arreglo de barba",
+		"price": 500,
+		"duration_minuts": 90,
+		"state": true,
+		"created_at": {
+			"$date": "2025-10-10T09:30:00.000Z"
+		}
+	},
+	{
+		"name": "Barba",
+		"description": "Corte clasico de barba",
+		"price": 150,
+		"duration_minuts": 30,
+		"state": true,
+		"created_at": {
+			"$date": "2025-10-10T09:30:00.000Z"
+		}
+	}
+]

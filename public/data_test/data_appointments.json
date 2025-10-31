@@ -1,0 +1,88 @@
+[
+	{
+		"id": "appointment1_id",
+		"client": {
+			"id": "cliente1_id",
+			"name": "Roberto García",
+			"email": "roberto@email.com",
+			"phone": "+54 11 5555-1234"
+		},
+		"barber": {
+			"name": "Diego López",
+			"specialty": "Cortes modernos",
+			"occupation": "Barbero",
+			"ft_profile": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+			"rate": 4.6
+		},
+		"service": {
+			"id": "servicio1_id",
+			"name": "Corte de Cabello",
+			"price": 350.0
+		},
+		"branch": {
+			"nombre": "Castelar",
+			"direccion": "Arias 3200, Castelar",
+			"telefono": "+54 11 4624-9012"
+		},
+		"date_time": "2025-11-01T10:00:00-03:00",
+		"status": "pendiente"
+	},
+
+	{
+		"id": "appointment2_id",
+		"client": {
+			"id": "cliente2_id",
+			"name": "María Fernández",
+			"email": "maria@email.com",
+			"phone": "+54 11 5555-5678"
+		},
+		"barber": {
+			"name": "Mateo González",
+			"specialty": "Diseño artístico",
+			"occupacion": "Barbero Creativo",
+			"ft_profile": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
+			"rate": 4.9
+		},
+		"service": {
+			"id": "servicio1_id",
+			"name": "Corte de Cabello",
+			"price": 150.0
+		},
+		"branch": {
+			"name": "Hurlingham",
+			"address": "Av. Vergara 2050, Hurlingham",
+			"phone": "+54 11 4665-1234"
+		},
+		"date_time": "2025-11-02T14:30:00-03:00",
+		"status": "pendiente"
+	},
+
+	{
+		"id": "appointment3_id",
+		"client": {
+			"id": "cliente3_id",
+			"name": "Luis Rodríguez",
+			"email": "luis@email.com",
+			"phone": "+54 11 5555-9012"
+		},
+		"barber": {
+			"name": "Mateo González",
+			"specialty": "Diseño artístico",
+			"occupacion": "Barbero Creativo",
+			"ft_profile": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
+			"rate": 4.9
+		},
+		"service": {
+			"id": "servicio3_id",
+			"name": "Corte + barba",
+			"price": 500.0
+		},
+		"branch": {
+			"name": "Morón",
+			"address": "Av. Rivadavia 17500, Morón",
+			"phone": "+54 11 4628-5678"
+		},
+		"date_time": "2025-10-31T16:00:00-03:00",
+		"status": "pendiente"
+	}
+]
