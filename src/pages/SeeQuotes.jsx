@@ -1,12 +1,23 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router'
 
-import { Calendar, Scissors as ScissorsIcon } from 'lucide-react'
+import { Calendar, Scissors as ScissorsIcon, CheckCircle } from 'lucide-react'
 
 import CardAppointment from '../components/SeeQuotesComponents/CardAppointment'
 
 function SeeQuotes() {
 	const [appointments, setAppointments] = useState([])
+
+	const [showSuccess, setShowSuccess] = useState(false)
 	const [loading, setLoading] = useState(true)
+	const location = useLocation()
+
+	useEffect(() => {
+		if (location.state?.success) {
+			setShowSuccess(true)
+			setTimeout(() => setShowSuccess(false), 3000)
+		}
+	}, [location])
 
 	useEffect(() => {
 		const loadData = async () => {
@@ -57,6 +68,14 @@ function SeeQuotes() {
 					/>
 				))}
 			</div>
+
+			{showSuccess && (
+				<div className="mb-6 bg-linear-to-r from-green-500 to-green-600 border-2 border-green-400 rounded-xl p-4 flex items-center space-x-3 animate-in fade-in slide-in-from-top duration-300 relative z-10">
+					<CheckCircle className="h-6 w-6 text-white" />
+					<p className="text-white font-medium">Cita agendada exitosamente</p>
+				</div>
+			)}
+
 			<div className="relative bg-linear-to-br from-slate-800 to-slate-900 rounded-2xl shadow-2xl border border-slate-700 p-4 sm:p-6">
 				<div className="mb-6">
 					<h2 className="text-2xl sm:text-3xl font-bold text-white">
