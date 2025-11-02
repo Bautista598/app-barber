@@ -2,11 +2,16 @@ import { useState } from 'react'
 
 // Importación de los componentes de cada paso para agendar una cita
 import SelectBranch from '../components/AddAppointmentComponents/SelectBranch'
+import SelectService from '../components/AddAppointmentComponents/SelectService'
+import { useAsyncError } from 'react-router'
 
 function AddAppointment() {
 	const [step, setStep] = useState(1)
 	const [loading, setLoading] = useState(true)
+
+	// Estados para los componentes
 	const [selectedBranch, setSelectedBranch] = useState(null)
+	const [selectedService, setSelectedService] = useState(null)
 
 	const handleBack = () => {
 		if (step > 1) setStep(step - 1)
@@ -27,6 +32,13 @@ function AddAppointment() {
 
 	return (
 		<div>
+			<div className="absolute inset-0 overflow-hidden pointer-events-none">
+				<div className="absolute top-10 left-10 w-32 h-32 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+				<div className="absolute top-20 right-10 w-32 h-32 bg-amber-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+				<div className="absolute bottom-10 left-20 w-32 h-32 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+				<div className="absolute bottom-20 right-20 w-32 h-32 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-6000"></div>
+			</div>
+
 			{step === 1 && (
 				<SelectBranch
 					selectedBranch={selectedBranch}
@@ -34,11 +46,7 @@ function AddAppointment() {
 				/>
 			)}
 
-			{step === 2 && (
-				<div>
-					<span>Paso 2</span>
-				</div>
-			)}
+			{step === 2 && <SelectService selectedService={'corte + barba'} />}
 
 			{step === 3 && (
 				<div>
@@ -65,7 +73,7 @@ function AddAppointment() {
 					onClick={handleNext}
 					disabled={
 						(step === 1 && !selectedBranch) ||
-						(step === 2 && !selectedBranch) ||
+						(step === 2 && !selectedService) ||
 						(step === 3 && !selectedBranch) ||
 						(step === 4 && (!selectedBranch || !selectedBranch))
 					}
