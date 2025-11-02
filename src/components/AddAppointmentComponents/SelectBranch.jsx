@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Check, MapPin } from 'lucide-react'
 
-function SelectBranch() {
+function SelectBranch({ selectedBranch, setSelectedBranch }) {
 	const [branch, setBranch] = useState([])
-	const [selectedBranch, setSelectedBranch] = useState(null)
 
 	// Cargar datos del JSON de forma asíncrona
 	useEffect(() => {
