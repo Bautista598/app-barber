@@ -1,8 +1,6 @@
 [
 	{
-		"_id": {
-			"$oid": "68ee7c217fc7464893a3dd8c"
-		},
+		"id": "68ee7c217fc7464893a3dd8c",
 		"name": "Castelar",
 		"address": "Arias 3200, Castelar",
 		"phone": "+54 11 4624-9012",
@@ -12,9 +10,7 @@
 		}
 	},
 	{
-		"_id": {
-			"$oid": "68ee7c217fc7464893a3dd8a"
-		},
+		"id": "68ee7c217fc7464893a3dd8a",
 		"name": "Hurlingham",
 		"address": "Av. Vergara 2050, Hurlingham",
 		"phone": "+54 11 4665-1234",
@@ -24,9 +20,7 @@
 		}
 	},
 	{
-		"_id": {
-			"$oid": "68ee7c217fc7464893a3dd8b"
-		},
+		"id": "68ee7c217fc7464893a3dd8b",
 		"name": "Morón",
 		"address": "Av. Rivadavia 17500, Morón",
 		"phone": "+54 11 4628-5678",
