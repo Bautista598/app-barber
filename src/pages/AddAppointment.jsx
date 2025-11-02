@@ -1,5 +1,8 @@
 import { useState } from 'react'
 
+// Importación de los componentes de cada paso para agendar una cita
+import SelectBranch from '../components/AddAppointmentComponents/SelectBranch'
+
 function AddAppointment() {
 	const [loading, setLoading] = useState(true)
 
@@ -12,9 +15,12 @@ function AddAppointment() {
 	}
 
 	return (
-		<h1 className="text-xl text-white">
-			Aquí irán los componente de los 4 pasos y la lógica para agendar la cita
-		</h1>
+		<div>
+			<h1 className="text-xl text-white">
+				Aquí irán los componente de los 4 pasos y la lógica para agendar la cita
+			</h1>
+			<SelectBranch />
+		</div>
 	)
 }
 
