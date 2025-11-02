@@ -1,5 +1,13 @@
 import { useEffect, useState, useMemo } from 'react'
-import { Search, DollarSign, Users, Star, Clock, MapPin } from 'lucide-react'
+import {
+	Search,
+	DollarSign,
+	Users,
+	Star,
+	Clock,
+	MapPin,
+	UserCog,
+} from 'lucide-react'
 import React from 'react'
 
 function BarberTable() {
@@ -45,7 +53,7 @@ function BarberTable() {
 		)
 
 	return (
-		<div className="space-y-6">
+		<div className="space-y-6 ">
 			{/* Input de búsqueda */}
 			<div className="relative">
 				<div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -61,8 +69,8 @@ function BarberTable() {
 			</div>
 
 			{/* Tabla */}
-			<div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-				<div className="overflow-x-auto">
+			<div className="bg-white rounded-xl  shadow-sm border border-slate-200 overflow-hidden">
+				<div className="max-h-[480px] overflow-y-auto overflow-x-auto">
 					<table className="min-w-full divide-y divide-slate-200">
 						<thead className="bg-slate-50">
 							<tr>
@@ -86,6 +94,9 @@ function BarberTable() {
 								</th>
 								<th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
 									Sucursal
+								</th>
+								<th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+									Funciones
 								</th>
 							</tr>
 						</thead>
@@ -174,7 +185,8 @@ function BarberTable() {
 											<div className="flex items-center space-x-2">
 												<Clock className="h-4 w-4 text-slate-400" />
 												<span className="text-sm text-slate-900">
-													{barber.start_time} - {barber.time_end}
+													{barber.start_time.slice(0, 5)} -{' '}
+													{barber.end_time.slice(0, 5)}
 												</span>
 											</div>
 										</td>
@@ -185,6 +197,11 @@ function BarberTable() {
 												<span className="text-sm text-slate-900">
 													{barber.branch || 'Principal'}
 												</span>
+											</div>
+										</td>
+										<td className="px-6 py-4 whitespace-nowrap">
+											<div className="flex items-center justify-center rounded-xl space-x-2 hover:bg-linear-to-br from-blue-400 to-blue-500 text-slate-400 hover:text-black w-12 h-12">
+												<UserCog />
 											</div>
 										</td>
 									</tr>

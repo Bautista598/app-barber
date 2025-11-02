@@ -7,9 +7,9 @@ const custTod = 75
 function Dashboard() {
 	return (
 		<>
-			<div className="min-h-screen ">
-				<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-					<div className="mb-8">
+			<div className="min-h-full  ">
+				<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+					<div className="">
 						<StatsCards earnTod={earnTod} custTod={custTod} />
 					</div>
 
