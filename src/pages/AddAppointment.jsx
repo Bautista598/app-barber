@@ -9,9 +9,11 @@ function AddAppointment() {
 	const [selectedBranch, setSelectedBranch] = useState(null)
 
 	const handleBack = () => {
+		if (step > 1) setStep(step - 1)
 		console.log('volver al paso anterior')
 	}
 	const handleNext = () => {
+		if (step < 4) setStep(step + 1)
 		console.log('siguiente paso')
 	}
 
@@ -32,6 +34,24 @@ function AddAppointment() {
 				/>
 			)}
 
+			{step === 2 && (
+				<div>
+					<span>Paso 2</span>
+				</div>
+			)}
+
+			{step === 3 && (
+				<div>
+					<span>Paso 3</span>
+				</div>
+			)}
+
+			{step === 4 && (
+				<div>
+					<span>Paso 4</span>
+				</div>
+			)}
+
 			<div className="flex items-center justify-between mt-6 sm:mt-8 pt-6 border-t border-slate-700">
 				<button
 					onClick={handleBack}
@@ -45,9 +65,9 @@ function AddAppointment() {
 					onClick={handleNext}
 					disabled={
 						(step === 1 && !selectedBranch) ||
-						(step === 2 && !selectedServicio) ||
-						(step === 3 && !selectedBarbero) ||
-						(step === 4 && (!selectedDate || !selectedTime))
+						(step === 2 && !selectedBranch) ||
+						(step === 3 && !selectedBranch) ||
+						(step === 4 && (!selectedBranch || !selectedBranch))
 					}
 					className="px-4 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-amber-400 to-orange-500 text-slate-900 rounded-lg font-bold hover:from-amber-500 hover:to-orange-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg text-sm sm:text-base"
 				>
