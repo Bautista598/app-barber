@@ -1,5 +1,6 @@
 [
 	{
+		"id": "1",
 		"name": "Diego López",
 		"specialty": "Cortes modernos",
 		"occupation": "Barbero",
@@ -13,6 +14,7 @@
 		"customers_today": 5
 	},
 	{
+		"id": "2",
 		"name": "Mateo González",
 		"specialty": "Diseño artístico",
 		"occupacion": "Barbero Creativo",
