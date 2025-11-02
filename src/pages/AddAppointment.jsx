@@ -4,6 +4,7 @@ import { useState } from 'react'
 import SelectBranch from '../components/AddAppointmentComponents/SelectBranch'
 
 function AddAppointment() {
+	const [step, setStep] = useState(1)
 	const [loading, setLoading] = useState(true)
 
 	if (!loading) {
@@ -19,7 +20,7 @@ function AddAppointment() {
 			<h1 className="text-xl text-white">
 				Aquí irán los componente de los 4 pasos y la lógica para agendar la cita
 			</h1>
-			<SelectBranch />
+			{step === 1 && <SelectBranch />}
 		</div>
 	)
 }
