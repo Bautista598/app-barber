@@ -6,6 +6,14 @@ import SelectBranch from '../components/AddAppointmentComponents/SelectBranch'
 function AddAppointment() {
 	const [step, setStep] = useState(1)
 	const [loading, setLoading] = useState(true)
+	const [selectedBranch, setSelectedBranch] = useState(null)
+
+	const handleBack = () => {
+		console.log('volver al paso anterior')
+	}
+	const handleNext = () => {
+		console.log('siguiente paso')
+	}
 
 	if (!loading) {
 		return (
@@ -17,10 +25,35 @@ function AddAppointment() {
 
 	return (
 		<div>
-			<h1 className="text-xl text-white">
-				Aquí irán los componente de los 4 pasos y la lógica para agendar la cita
-			</h1>
-			{step === 1 && <SelectBranch />}
+			{step === 1 && (
+				<SelectBranch
+					selectedBranch={selectedBranch}
+					setSelectedBranch={setSelectedBranch}
+				/>
+			)}
+
+			<div className="flex items-center justify-between mt-6 sm:mt-8 pt-6 border-t border-slate-700">
+				<button
+					onClick={handleBack}
+					disabled={step === 1}
+					className="px-4 sm:px-6 py-2 sm:py-2.5 border-2 border-slate-700 text-slate-300 rounded-lg font-medium hover:bg-slate-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+				>
+					Atrás
+				</button>
+
+				<button
+					onClick={handleNext}
+					disabled={
+						(step === 1 && !selectedBranch) ||
+						(step === 2 && !selectedServicio) ||
+						(step === 3 && !selectedBarbero) ||
+						(step === 4 && (!selectedDate || !selectedTime))
+					}
+					className="px-4 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-amber-400 to-orange-500 text-slate-900 rounded-lg font-bold hover:from-amber-500 hover:to-orange-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg text-sm sm:text-base"
+				>
+					{step === 4 ? 'Continuar' : 'Siguiente'}
+				</button>
+			</div>
 		</div>
 	)
 }
