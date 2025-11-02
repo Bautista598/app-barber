@@ -3,7 +3,6 @@ import { useState } from 'react'
 // Importación de los componentes de cada paso para agendar una cita
 import SelectBranch from '../components/AddAppointmentComponents/SelectBranch'
 import SelectService from '../components/AddAppointmentComponents/SelectService'
-import { useAsyncError } from 'react-router'
 
 function AddAppointment() {
 	const [step, setStep] = useState(1)
@@ -18,7 +17,10 @@ function AddAppointment() {
 		console.log('volver al paso anterior')
 	}
 	const handleNext = () => {
-		if (step < 4) setStep(step + 1)
+		if (step === 1 && SelectBranch) setStep(2)
+		else if (step === 2 && SelectService) setStep(3)
+		else if (step === 3 && selectedBarbero) setStep(4)
+
 		console.log('siguiente paso')
 	}
 
@@ -46,7 +48,12 @@ function AddAppointment() {
 				/>
 			)}
 
-			{step === 2 && <SelectService selectedService={'corte + barba'} />}
+			{step === 2 && (
+				<SelectService
+					selectedService={selectedService}
+					setSelectedService={setSelectedService}
+				/>
+			)}
 
 			{step === 3 && (
 				<div>
