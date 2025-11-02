@@ -3,6 +3,8 @@ import { useState } from 'react'
 // Importación de los componentes de cada paso para agendar una cita
 import SelectBranch from '../components/AddAppointmentComponents/SelectBranch'
 import SelectService from '../components/AddAppointmentComponents/SelectService'
+import SelectBarber from '../components/AddAppointmentComponents/SelectBarber'
+import SelectDataTime from '../components/AddAppointmentComponents/SelectDataTime'
 
 function AddAppointment() {
 	const [step, setStep] = useState(1)
@@ -11,6 +13,9 @@ function AddAppointment() {
 	// Estados para los componentes
 	const [selectedBranch, setSelectedBranch] = useState(null)
 	const [selectedService, setSelectedService] = useState(null)
+	const [selectedBarber, setSelectedBarber] = useState(null)
+	const [selectedDate, setSelectedDate] = useState('')
+	const [selectedTime, setSelectedTime] = useState('')
 
 	const handleBack = () => {
 		if (step > 1) setStep(step - 1)
@@ -19,7 +24,7 @@ function AddAppointment() {
 	const handleNext = () => {
 		if (step === 1 && SelectBranch) setStep(2)
 		else if (step === 2 && SelectService) setStep(3)
-		else if (step === 3 && selectedBarbero) setStep(4)
+		else if (step === 3 && SelectBarber) setStep(4)
 
 		console.log('siguiente paso')
 	}
@@ -56,15 +61,20 @@ function AddAppointment() {
 			)}
 
 			{step === 3 && (
-				<div>
-					<span>Paso 3</span>
-				</div>
+				<SelectBarber
+					selectedBarber={selectedBarber}
+					setSelectedBarber={setSelectedBarber}
+				/>
 			)}
 
 			{step === 4 && (
-				<div>
-					<span>Paso 4</span>
-				</div>
+				<SelectDataTime
+					selectedBarber={selectedBarber}
+					selectedDate={selectedDate}
+					setSelectedDate={setSelectedDate}
+					selectedTime={selectedTime}
+					setSelectedTime={setSelectedTime}
+				/>
 			)}
 
 			<div className="flex items-center justify-between mt-6 sm:mt-8 pt-6 border-t border-slate-700">
@@ -81,10 +91,10 @@ function AddAppointment() {
 					disabled={
 						(step === 1 && !selectedBranch) ||
 						(step === 2 && !selectedService) ||
-						(step === 3 && !selectedBranch) ||
-						(step === 4 && (!selectedBranch || !selectedBranch))
+						(step === 3 && !selectedBarber) ||
+						(step === 4 && (!selectedDate || !selectedTime))
 					}
-					className="px-4 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-amber-400 to-orange-500 text-slate-900 rounded-lg font-bold hover:from-amber-500 hover:to-orange-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg text-sm sm:text-base"
+					className="px-4 sm:px-6 py-2 sm:py-2.5 bg-linear-to-r from-amber-400 to-orange-500 text-slate-900 rounded-lg font-bold hover:from-amber-500 hover:to-orange-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg text-sm sm:text-base"
 				>
 					{step === 4 ? 'Continuar' : 'Siguiente'}
 				</button>
