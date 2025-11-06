@@ -9,7 +9,7 @@ const CreateBarber = () => {
 	}
 
 	return (
-		<div className="max-w-xl mx-auto p-6 bg-white shadow-xl rounded-lg mt-10">
+		<div className="max-w-xl mx-auto p-6 rounded-lg mt-10 bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
 			<h2 className="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">
 				Crear Barbero
 			</h2>
