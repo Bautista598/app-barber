@@ -30,9 +30,9 @@ const CreateBarber = () => {
 					/>
 				</div>
 
-				<TextForm />
-				<TextForm />
-				<TextForm />
+				<TextForm label="Nombre" placeholder="Juan Perez" />
+				<TextForm label="Ocupación" placeholder="Barbero" />
+				<TextForm label="Especialidad" placeholder="Cortes clásicos" />
 
 				<RateBarber />
 
