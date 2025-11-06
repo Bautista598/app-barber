@@ -1,3 +1,7 @@
+import CreateBarber from './CreateBarber'
+import EditBarber from './EditBarber'
+import DeleteBarber from './DeleteBarber'
+
 function ModalConfig({ isOpen, onClose }) {
 	if (!isOpen) return null
 
@@ -14,9 +18,9 @@ function ModalConfig({ isOpen, onClose }) {
 					✕
 				</button>
 				<h2 className="text-xl font-semibold mb-2">Configuración ⚙️</h2>
-				<p className="text-gray-600 mb-4">
-					funciones para crear, editar o eliminar un barbero
-				</p>
+				<CreateBarber />
+				<EditBarber />
+				<DeleteBarber />
 			</div>
 		</div>
 	)
