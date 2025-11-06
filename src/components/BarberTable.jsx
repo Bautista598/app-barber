@@ -9,11 +9,14 @@ import {
 	UserCog,
 } from 'lucide-react'
 import React from 'react'
+import ModalConfig from './DashboardComponents/ModalConfig'
 
 function BarberTable() {
 	const [barberos, setBarberos] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [searchTerm, setSearchTerm] = useState('')
+
+	const [modalState, setModalState] = useState(false)
 
 	// Cargar datos del JSON de forma asíncrona
 	useEffect(() => {
@@ -200,8 +203,21 @@ function BarberTable() {
 											</div>
 										</td>
 										<td className="px-6 py-4 whitespace-nowrap">
-											<div className="flex items-center justify-center rounded-xl space-x-2 hover:bg-linear-to-br from-blue-400 to-blue-500 text-slate-400 hover:text-black w-12 h-12">
-												<UserCog />
+											<div
+												className="flex items-center justify-center rounded-xl space-x-2 
+               w-12 h-12 text-slate-400 hover:text-black
+               hover:transition duration-700 ease-in-out delay-150
+               hover:bg-gradient-to-br hover:from-blue-400 hover:to-blue-500"
+											>
+												<UserCog
+													className="cursor-pointer hover:text-black "
+													onClick={() => setModalState(true)}
+												/>
+
+												<ModalConfig
+													isOpen={modalState}
+													onClose={() => setModalState(false)}
+												/>
 											</div>
 										</td>
 									</tr>
