@@ -5,7 +5,7 @@ function TextForm({ placeholder, label }) {
 		<div>
 			<label
 				htmlFor="nombre"
-				className="block tracking-widest text-sm font-medium text-white flex items-center justify-between"
+				className="tracking-widest text-sm font-medium text-white flex items-center justify-between"
 			>
 				{label} <CircleAlert className="text-red-600" />
 			</label>
@@ -15,7 +15,7 @@ function TextForm({ placeholder, label }) {
       mt-1 
       p-[3px]  
       rounded-xl 
-      bg-gradient-to-br from-blue-400 to-blue-600  
+      bg-linear-to-br from-blue-400 to-blue-600  
       shadow-lg
     "
 			>
@@ -37,6 +37,8 @@ function TextForm({ placeholder, label }) {
       "
 				/>
 			</div>
+
+			<style>input:focus {}</style>
 		</div>
 	)
 }
