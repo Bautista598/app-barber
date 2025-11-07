@@ -3,21 +3,34 @@ import WorkingTime from './FormComponents/WorkingTime'
 import SelectedBranchBarber from './FormComponents/SelectedBranchBarber'
 import RateBarber from './FormComponents/RateBarber'
 
+import { useState } from 'react'
+
 const CreateBarber = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault()
 	}
 
+	const [validate, setValidate] = useState({
+		ftProfile: null,
+		name: null,
+		occupation: null,
+		especially: null,
+		rate: null,
+		timeStart: null,
+		timeEnd: null,
+		selectBranch: null,
+	})
+
 	return (
 		<div className="max-w-xl mx-auto p-6 rounded-lg mt-10 bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
-			<h2 className="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">
+			<h2 className="text-2xl font-bold mb-6 text-white border-b pb-2">
 				Crear Barbero
 			</h2>
 			<form onSubmit={handleSubmit} className="space-y-4">
 				<div>
 					<label
 						htmlFor="fotoPerfil"
-						className="block text-sm font-medium text-gray-700"
+						className="block text-sm font-medium text-white"
 					>
 						Foto de Perfil (Opcional)
 					</label>
