@@ -7,7 +7,7 @@ function TextForm({ placeholder, label }) {
 				htmlFor="nombre"
 				className="tracking-widest text-sm font-medium text-white flex items-center justify-between"
 			>
-				{label} <CircleAlert className="text-red-600" />
+				{label}
 			</label>
 
 			<div
