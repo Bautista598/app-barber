@@ -32,8 +32,9 @@ function TextForm({ placeholder, label }) {
         bg-linear-to-br from-slate-900 via-slate-800 to-slate-900
         rounded-[10px]
         shadow-inner 
-        text-white 
+        text-gray-300	
         focus:outline-none 
+				focus:text-white
       "
 				/>
 			</div>
