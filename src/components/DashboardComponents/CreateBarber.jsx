@@ -38,7 +38,21 @@ const CreateBarber = () => {
 
 		// Validación: Especialidad (ej. obligatoria)
 		if (!formData.especially.trim()) {
-			newErrors.especially = 'Debe seleccionar una especialidad.'
+			newErrors.especially = 'La especialidad es obligatorio.'
+		} else if (formData.especially.length < 3) {
+			newErrors.especially = 'La especialidad debe tener al menos 3 caracteres.'
+		}
+
+		if (!formData.timeStart.trim()) {
+			newErrors.timeStart = 'seleccione la hora de inicio.'
+		} else if (formData.timeStart.length < 4) {
+			newErrors.timeStart = 'seleccione la hora de inicio.'
+		}
+
+		if (!formData.timeEnd.trim()) {
+			newErrors.timeEnd = 'seleccione la hora de fin.'
+		} else if (formData.timeEnd.length < 4) {
+			newErrors.timeEnd = 'seleccione la hora de fin.'
 		}
 
 		setErrors(newErrors)
@@ -119,7 +133,29 @@ const CreateBarber = () => {
 
 				<RateBarber />
 
-				<WorkingTime />
+				<div className="">
+					<label
+						htmlFor="TimeStart"
+						className="tracking-widest text-sm font-medium text-white"
+					>
+						Horario de Trabajo
+					</label>
+					<div className="flex flex-row w-full justify-between">
+						<WorkingTime
+							handleChange={handleChange}
+							name="timeStart"
+							error={errors.timeStart}
+							value={formData.timeStart}
+						/>
+
+						<WorkingTime
+							handleChange={handleChange}
+							name="timeEnd"
+							error={errors.timeEnd}
+							value={formData.timeEnd}
+						/>
+					</div>
+				</div>
 
 				<SelectedBranchBarber />
 
