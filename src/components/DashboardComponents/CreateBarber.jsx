@@ -33,7 +33,7 @@ const CreateBarber = () => {
 		if (!formData.occupation.trim()) {
 			newErrors.occupation = 'La ocupación es obligatorio.'
 		} else if (formData.occupation.length < 3) {
-			newErrors.email = 'La ocupación debe tener al menos 3 caracteres.'
+			newErrors.occupation = 'La ocupación debe tener al menos 3 caracteres.'
 		}
 
 		// Validación: Especialidad (ej. obligatoria)
@@ -117,13 +117,11 @@ const CreateBarber = () => {
 					value={formData.especially}
 				/>
 
-				{/*
-
 				<RateBarber />
 
 				<WorkingTime />
 
-				<SelectedBranchBarber /> */}
+				<SelectedBranchBarber />
 
 				<button
 					type="submit"
