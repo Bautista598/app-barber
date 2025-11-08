@@ -1,6 +1,4 @@
-import { CircleAlert } from 'lucide-react'
-
-function TextForm({ placeholder, label }) {
+function TextForm({ placeholder, label, name, handleChange, error, value }) {
 	return (
 		<div>
 			<label
@@ -21,8 +19,10 @@ function TextForm({ placeholder, label }) {
 			>
 				<input
 					type="text"
-					id="nombre"
-					name="nombre"
+					id={label}
+					onChange={handleChange}
+					name={name}
+					value={value}
 					placeholder={placeholder}
 					required
 					className="
@@ -40,8 +40,7 @@ function TextForm({ placeholder, label }) {
       "
 				/>
 			</div>
-
-			<style>input:focus {}</style>
+			{error && <p className="text-xs text-red-500 mt-1">{error}</p>}
 		</div>
 	)
 }
