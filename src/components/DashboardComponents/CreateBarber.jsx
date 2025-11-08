@@ -60,9 +60,26 @@ const CreateBarber = () => {
 		return Object.keys(newErrors).length === 0
 	}
 
+	const validateSucursal = (value) => {
+		let errorMessage = ''
+
+		if (value === '') {
+			errorMessage = 'Debe seleccionar una sucursal válida.'
+		}
+
+		setErrors((prevErrors) => ({ ...prevErrors, selectBranch: errorMessage }))
+		return !errorMessage
+	}
+
 	const handleChange = (e) => {
 		const { name, value } = e.target
 		setFormData({ ...formData, [name]: value })
+
+		setFormData((prevData) => ({ ...prevData, [name]: value }))
+
+		if (name === 'selectBranch') {
+			validateSucursal(value)
+		}
 	}
 
 	const handleSubmit = (e) => {
@@ -157,7 +174,11 @@ const CreateBarber = () => {
 					</div>
 				</div>
 
-				<SelectedBranchBarber />
+				<SelectedBranchBarber
+					handleChange={handleChange}
+					value={formData.selectBranch}
+					error={errors.selectBranch}
+				/>
 
 				<button
 					type="submit"
