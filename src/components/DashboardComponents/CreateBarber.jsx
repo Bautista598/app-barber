@@ -55,6 +55,10 @@ const CreateBarber = () => {
 			newErrors.timeEnd = 'seleccione la hora de fin.'
 		}
 
+		if (!formData.selectBranch || formData.selectBranch === '') {
+			newErrors.selectBranch = 'Debe seleccionar una sucursal válida.'
+		}
+
 		setErrors(newErrors)
 		// Retorna true si no hay errores, false si hay errores
 		return Object.keys(newErrors).length === 0
