@@ -12,7 +12,7 @@ import React from 'react'
 import ModalConfig from './DashboardComponents/ModalConfig'
 
 function BarberTable() {
-	const [barberos, setBarberos] = useState([])
+	const [barbers, setBarbers] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [searchTerm, setSearchTerm] = useState('')
 
@@ -27,7 +27,7 @@ function BarberTable() {
 				if (!res.ok) throw new Error(`Error HTTP: ${res.status}`)
 
 				const data = await res.json()
-				setBarberos(Array.isArray(data) ? data : data.barberos ?? [])
+				setBarbers(Array.isArray(data) ? data : data.barbers ?? [])
 			} catch (err) {
 				console.error('Error al cargar barberos:', err)
 			} finally {
@@ -40,13 +40,13 @@ function BarberTable() {
 	// Filtrar resultados usando useMemo (para evitar recalcular cada render)
 	const filteredBarberos = useMemo(() => {
 		const lower = searchTerm.toLowerCase()
-		return barberos.filter(
+		return barbers.filter(
 			(barber) =>
 				barber.name?.toLowerCase().includes(lower) ||
 				barber.occupation?.toLowerCase().includes(lower) ||
 				barber.branch?.toLowerCase().includes(lower)
 		)
-	}, [barberos, searchTerm])
+	}, [barbers, searchTerm])
 
 	if (loading)
 		return (
