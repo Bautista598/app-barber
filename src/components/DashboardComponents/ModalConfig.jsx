@@ -20,7 +20,8 @@ function ModalConfig({ isOpen, onClose }) {
 						✕
 					</button>
 				</div>
-				<CreateBarber />
+				{/* <CreateBarber /> */}
+				<EditBarber />
 			</div>
 		</section>
 	)

@@ -1,7 +1,67 @@
-import React from 'react'
+import TextForm from './FormComponents/TextForm'
+import WorkingTime from './FormComponents/WorkingTime'
+import SelectedBranchBarber from './FormComponents/SelectedBranchBarber'
 
-function EditBarber() {
-	return <div>Aqí se editaran las propiedades de los barberos</div>
+const EditBarber = () => {
+	const handleSubmit = (e) => {
+		e.preventDefault()
+	}
+
+	return (
+		<div className="max-w-xl mx-auto  p-6 rounded-lg mt-10 bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
+			<h2 className="text-2xl font-bold mb-6 text-white border-b pb-2">
+				Editar barbero
+			</h2>
+			<form onSubmit={handleSubmit} noValidate className="space-y-4">
+				<div>
+					<label
+						htmlFor="fotoPerfil"
+						className="block text-sm font-medium text-white"
+					>
+						Foto de Perfil (Opcional)
+					</label>
+					<input
+						type="file"
+						id="fotoPerfil"
+						name="fotoPerfil"
+						accept="image/*"
+						className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
+					/>
+				</div>
+
+				<TextForm label="Nombre" placeholder="Juan Perez" name="name" />
+				<TextForm label="Ocupación" placeholder="Barbero" name="occupation" />
+				<TextForm
+					label="Especialidad"
+					placeholder="Cortes clásicos"
+					name="especially"
+				/>
+
+				<div className="">
+					<label
+						htmlFor="TimeStart"
+						className="tracking-widest text-sm font-medium text-white"
+					>
+						Horario de Trabajo
+					</label>
+					<div className="flex flex-row w-full justify-between">
+						<WorkingTime name="timeStart" />
+
+						<WorkingTime name="timeEnd" />
+					</div>
+				</div>
+
+				<SelectedBranchBarber />
+
+				<button
+					type="submit"
+					className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out"
+				>
+					editar barbero
+				</button>
+			</form>
+		</div>
+	)
 }
 
 export default EditBarber
