@@ -34,7 +34,6 @@ const CreateBarber = () => {
 
 	const handleChange = (e) => {
 		const { name, value } = e.target
-		setFormData({ ...formData, [name]: value })
 
 		setFormData((prevData) => ({ ...prevData, [name]: value }))
 
