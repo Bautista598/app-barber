@@ -1,0 +1,10 @@
+{
+	"ftProfile": "/src/assets/unknown_profile.jpg",
+	"name": "Pedro",
+	"occupation": "Barbero",
+	"especially": "Cortes Modernos",
+	"rate": 4.7,
+	"timeStart": "09:00:00",
+	"timeEnd": "17:00:00",
+	"selectBranch": "Norte"
+}
