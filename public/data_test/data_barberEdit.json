@@ -1,10 +1,42 @@
-{
-	"ftProfile": "/src/assets/unknown_profile.jpg",
-	"name": "Pedro",
-	"occupation": "Barbero",
-	"especially": "Cortes Modernos",
-	"rate": 4.7,
-	"timeStart": "09:00:00",
-	"timeEnd": "17:00:00",
-	"selectBranch": "Norte"
-}
+[
+	{
+		"id": 1,
+		"name": "Diego López",
+		"specialty": "Cortes modernos",
+		"occupation": "Barbero",
+		"ft_profile": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+		"start_time": "09:00:00",
+		"end_time": "17:00:00",
+		"branch": "Hurlingham"
+	},
+	{
+		"id": 2,
+		"name": "Mateo González",
+		"specialty": "Diseño artístico",
+		"occupacion": "Barbero Creativo",
+		"ft_profile": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
+		"start_time": "12:00:00",
+		"end_time": "21:00:00",
+		"branch": "Morón"
+	},
+	{
+		"id": 3,
+		"name": "Julian",
+		"specialty": "Cortes Clasicos",
+		"occupacion": "Barbero Creativo",
+		"ft_profile": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
+		"start_time": "8:00:00",
+		"end_time": "16:00:00",
+		"branch": "Hurlingham"
+	},
+	{
+		"id": 4,
+		"name": "Elias Ezequiel",
+		"specialty": "Cortes personalizados",
+		"occupacion": "Peluquero Creativo",
+		"ft_profile": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
+		"start_time": "13:00:00",
+		"end_time": "21:00:00",
+		"branch": "Palermo"
+	}
+]

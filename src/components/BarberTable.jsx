@@ -11,12 +11,12 @@ import {
 import React from 'react'
 import ModalConfig from './DashboardComponents/ModalConfig'
 
-function BarberTable() {
+function BarberTable({ onEditBarber }) {
 	const [barbers, setBarbers] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [searchTerm, setSearchTerm] = useState('')
 
-	const [modalState, setModalState] = useState(false)
+	// const [modalState, setModalState] = useState(false)
 
 	// Cargar datos del JSON de forma asíncrona
 	useEffect(() => {
@@ -107,7 +107,7 @@ function BarberTable() {
 							{filteredBarberos.length === 0 ? (
 								<tr>
 									<td
-										colSpan={7}
+										colSpan={8}
 										className="px-6 py-12 text-center text-slate-500"
 									>
 										<div className="flex flex-col items-center space-y-2">
@@ -211,13 +211,14 @@ function BarberTable() {
 											>
 												<UserCog
 													className="cursor-pointer hover:text-black "
-													onClick={() => setModalState(true)}
+													onClick={() => onEditBarber(barber.id)}
 												/>
 
-												<ModalConfig
+												{/* <ModalConfig
 													isOpen={modalState}
 													onClose={() => setModalState(false)}
-												/>
+													barberID={barber.id}
+												/> */}
 											</div>
 										</td>
 									</tr>

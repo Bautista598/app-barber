@@ -1,6 +1,6 @@
 [
 	{
-		"id": "1",
+		"id": 1,
 		"name": "Diego López",
 		"specialty": "Cortes modernos",
 		"occupation": "Barbero",
@@ -14,10 +14,10 @@
 		"customers_today": 5
 	},
 	{
-		"id": "2",
+		"id": 2,
 		"name": "Mateo González",
 		"specialty": "Diseño artístico",
-		"occupacion": "Barbero Creativo",
+		"occupation": "Barbero Creativo",
 		"stateBarber": true,
 		"ft_profile": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
 		"rate": 4.9,
@@ -28,10 +28,10 @@
 		"customers_today": 6
 	},
 	{
-		"id": "3",
+		"id": 3,
 		"name": "Julian",
 		"specialty": "Cortes Clasicos",
-		"occupacion": "Barbero Creativo",
+		"occupation": "Barbero Creativo",
 		"stateBarber": true,
 		"ft_profile": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
 		"rate": 3.9,
@@ -42,10 +42,10 @@
 		"customers_today": 9
 	},
 	{
-		"id": "4",
+		"id": 4,
 		"name": "Elias Ezequiel",
 		"specialty": "Cortes personalizados",
-		"occupacion": "Peluquero Creativo",
+		"occupation": "Peluquero Creativo",
 		"stateBarber": true,
 		"ft_profile": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
 		"rate": 4.9,

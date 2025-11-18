@@ -1,10 +1,25 @@
+import { useState } from 'react'
 import StatsCards from '../components/StatsCards'
 import BarberTable from '../components/BarberTable'
+import ModalConfig from '../components/DashboardComponents/ModalConfig'
 
 const earnTod = 25000
 const custTod = 75
 
 function Dashboard() {
+	const [isModalOpen, setIsModalOpen] = useState(false)
+	const [selectedBarberId, setSelectedBarberId] = useState(null)
+
+	const handleOpenModal = (barberId) => {
+		setSelectedBarberId(barberId)
+		setIsModalOpen(true)
+	}
+
+	const handleCloseModal = () => {
+		setIsModalOpen(false)
+		setSelectedBarberId(null)
+	}
+
 	return (
 		<>
 			<div className="min-h-full  ">
@@ -20,9 +35,14 @@ function Dashboard() {
 								Gestiona y consulta el rendimiento de todos los barberos
 							</p>
 						</div>
-						<BarberTable />
+						<BarberTable onEditBarber={handleOpenModal} />
 					</div>
 				</main>
+				<ModalConfig
+					isOpen={isModalOpen}
+					onClose={handleCloseModal}
+					barberID={selectedBarberId}
+				/>
 			</div>
 		</>
 	)

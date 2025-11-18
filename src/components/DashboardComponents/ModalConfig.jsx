@@ -2,7 +2,7 @@ import CreateBarber from './CreateBarber'
 import EditBarber from './EditBarber'
 import DeleteBarber from './DeleteBarber'
 
-function ModalConfig({ isOpen, onClose }) {
+function ModalConfig({ isOpen, onClose, barberID }) {
 	if (!isOpen) return null
 
 	return (
@@ -21,7 +21,10 @@ function ModalConfig({ isOpen, onClose }) {
 					</button>
 				</div>
 				{/* <CreateBarber /> */}
-				<EditBarber />
+
+				{console.log(barberID)}
+
+				<EditBarber barberID={barberID} />
 			</div>
 		</section>
 	)
