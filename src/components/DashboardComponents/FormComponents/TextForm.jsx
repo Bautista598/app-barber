@@ -1,4 +1,4 @@
-function TextForm({ placeholder, label, name, handleChange, error, value }) {
+function TextForm({ placeholder, label, name, onChange, error, value }) {
 	const isDirty = !!value // True si el campo tiene algún valor
 	const hasError = !!error
 
@@ -43,7 +43,7 @@ function TextForm({ placeholder, label, name, handleChange, error, value }) {
 				<input
 					type="text"
 					id={label}
-					onChange={handleChange}
+					onChange={onChange}
 					name={name}
 					value={value}
 					placeholder={placeholder}

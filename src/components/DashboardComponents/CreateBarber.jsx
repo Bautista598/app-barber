@@ -86,7 +86,7 @@ const CreateBarber = () => {
 				<TextForm
 					label="Nombre"
 					placeholder="Juan Perez"
-					handleChange={handleChange}
+					onChange={handleChange}
 					name="name"
 					error={errors.name}
 					value={formData.name}
@@ -94,7 +94,7 @@ const CreateBarber = () => {
 				<TextForm
 					label="Ocupación"
 					placeholder="Barbero"
-					handleChange={handleChange}
+					onChange={handleChange}
 					name="occupation"
 					error={errors.occupation}
 					value={formData.occupation}
@@ -102,7 +102,7 @@ const CreateBarber = () => {
 				<TextForm
 					label="Especialidad"
 					placeholder="Cortes clásicos"
-					handleChange={handleChange}
+					onChange={handleChange}
 					name="especially"
 					error={errors.especially}
 					value={formData.especially}

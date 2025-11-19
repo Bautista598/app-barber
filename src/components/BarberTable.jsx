@@ -16,8 +16,6 @@ function BarberTable({ onEditBarber }) {
 	const [loading, setLoading] = useState(true)
 	const [searchTerm, setSearchTerm] = useState('')
 
-	// const [modalState, setModalState] = useState(false)
-
 	// Cargar datos del JSON de forma asíncrona
 	useEffect(() => {
 		const loadData = async () => {
@@ -107,7 +105,7 @@ function BarberTable({ onEditBarber }) {
 							{filteredBarberos.length === 0 ? (
 								<tr>
 									<td
-										colSpan={8}
+										colSpan={7}
 										className="px-6 py-12 text-center text-slate-500"
 									>
 										<div className="flex flex-col items-center space-y-2">
@@ -205,7 +203,8 @@ function BarberTable({ onEditBarber }) {
 										<td className="px-6 py-4 whitespace-nowrap">
 											<div
 												className="flex items-center justify-center rounded-xl space-x-2 
-               w-12 h-12 text-slate-400 hover:text-black
+												w-12 h-12
+                text-slate-400 hover:text-black
                hover:transition duration-700 ease-in-out delay-150
                hover:bg-gradient-to-br hover:from-blue-400 hover:to-blue-500"
 											>
@@ -213,12 +212,6 @@ function BarberTable({ onEditBarber }) {
 													className="cursor-pointer hover:text-black "
 													onClick={() => onEditBarber(barber.id)}
 												/>
-
-												{/* <ModalConfig
-													isOpen={modalState}
-													onClose={() => setModalState(false)}
-													barberID={barber.id}
-												/> */}
 											</div>
 										</td>
 									</tr>

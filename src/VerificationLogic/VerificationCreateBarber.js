@@ -15,22 +15,26 @@ export const validateForm = (formData, setErrors) => {
 			newErrors.occupation = 'La ocupación debe tener al menos 3 caracteres.'
 		}
 
+		const specialty = formData.specialty ?? 'Barbero'
 		// Validación: Especialidad (ej. obligatoria)
-		if (!formData.especially.trim()) {
-			newErrors.especially = 'La especialidad es obligatorio.'
-		} else if (formData.especially.length < 3) {
-			newErrors.especially = 'La especialidad debe tener al menos 3 caracteres.'
+		if (!specialty.trim()) {
+			newErrors.specialty = 'La especialidad es obligatorio.'
+		} else if (specialty.length < 3) {
+			newErrors.specialty = 'La especialidad debe tener al menos 3 caracteres.'
 		}
 
-		if (!formData.timeStart.trim()) {
+		const timeStart = formData.timeStart ?? '12:00:00'
+		if (!timeStart.trim()) {
 			newErrors.timeStart = 'seleccione la hora de inicio.'
-		} else if (formData.timeStart.length < 4) {
+		} else if (timeStart.length < 4) {
 			newErrors.timeStart = 'seleccione la hora de inicio.'
 		}
 
-		if (!formData.timeEnd.trim()) {
+
+		const timeEnd = formData.timeEnd ?? '20:00'
+		if (!timeEnd.trim()) {
 			newErrors.timeEnd = 'seleccione la hora de fin.'
-		} else if (formData.timeEnd.length < 4) {
+		} else if (timeEnd.length < 4) {
 			newErrors.timeEnd = 'seleccione la hora de fin.'
 		}
 
