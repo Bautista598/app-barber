@@ -1,23 +1,53 @@
-import { MongoClient, ServerApiVersion } from 'mongodb';
-const uri = "mongodb+srv://senrei598_db_user:EpbbB68z9JiBOi1E@barber-app-db.s1gmbxf.mongodb.net/?appName=barber-app-db";
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+import express from "express";
+import cors from "cors";
+import { MongoClient, ServerApiVersion } from "mongodb";
+
+import dotenv from "dotenv";
+dotenv.config({ path: "./.env" });
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+const mongoPass = process.env.MONGO_PASS;
+console.log("PASS:", mongoPass);
+
+const uri = `mongodb+srv://senrei598_db_user:${mongoPass}@barber-app-db.s1gmbxf.mongodb.net/?appName=barber-app-db`;
+
 const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
+    serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+    }
 });
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Conexión establecida correctamente");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
+
+async function connectDB() {
+    try {
+        await client.connect();
+        console.log("🔥 Conectado a MongoDB");
+
+       
+    } catch (err) {
+        console.error("❌ Error de conexión:", err);
+    }
 }
-run().catch(console.dir);
+
+let db;
+
+connectDB().then(database => {
+    db = database;
+});
+
+// ✔ Ruta de prueba
+app.get("/api/test", async (req, res) => {
+    try {
+        const result = await db.collection("test").find().toArray();
+        res.json(result);
+    } catch (err) {
+        res.status(500).json({ error: "Error al consultar MongoDB" });
+    }
+});
+
+const PORT = 3000;
+app.listen(PORT, () => console.log(`🚀 Servidor corriendo en puerto ${PORT}`));
