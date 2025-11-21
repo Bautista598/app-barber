@@ -7,14 +7,19 @@ import {
 	Clock,
 	MapPin,
 	UserCog,
+	UserRoundPlus,
 } from 'lucide-react'
 import React from 'react'
+
 import ModalConfig from './DashboardComponents/ModalConfig'
+import CreateBarber from './DashboardComponents/CreateBarber'
 
 function BarberTable({ onEditBarber }) {
 	const [barbers, setBarbers] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [searchTerm, setSearchTerm] = useState('')
+
+	const [isModalOpen, setIsModalOpen] = useState(false)
 
 	// Cargar datos del JSON de forma asíncrona
 	useEffect(() => {
@@ -53,10 +58,18 @@ function BarberTable({ onEditBarber }) {
 			</div>
 		)
 
+	const handleOpenModal = () => {
+		setIsModalOpen(true)
+	}
+
+	const handleCloseModal = () => {
+		setIsModalOpen(false)
+	}
+
 	return (
 		<div className="space-y-6 ">
 			{/* Input de búsqueda */}
-			<div className="relative">
+			<div className="relative flex items-center gap-5">
 				<div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
 					<Search className="h-5 w-5 text-slate-400" />
 				</div>
@@ -67,6 +80,12 @@ function BarberTable({ onEditBarber }) {
 					onChange={(e) => setSearchTerm(e.target.value)}
 					className="block w-full pl-12 pr-4 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-200 text-slate-900 placeholder-slate-400"
 				/>
+				<div
+					className="h-11 w-11 flex items-center justify-center rounded-xl bg-linear-to-br from-amber-400 to-orange-500"
+					onClick={handleOpenModal}
+				>
+					<UserRoundPlus className="h-7 w-7" />
+				</div>
 			</div>
 
 			{/* Tabla */}
@@ -220,6 +239,9 @@ function BarberTable({ onEditBarber }) {
 						</tbody>
 					</table>
 				</div>
+				<ModalConfig isOpen={isModalOpen} onClose={handleCloseModal}>
+					<CreateBarber />
+				</ModalConfig>
 			</div>
 		</div>
 	)
