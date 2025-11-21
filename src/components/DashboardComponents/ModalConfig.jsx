@@ -2,7 +2,7 @@ import CreateBarber from './CreateBarber'
 import EditBarber from './EditBarber'
 import DeleteBarber from './DeleteBarber'
 
-function ModalConfig({ isOpen, onClose, barberID }) {
+function ModalConfig({ isOpen, onClose, children }) {
 	if (!isOpen) return null
 
 	return (
@@ -20,11 +20,8 @@ function ModalConfig({ isOpen, onClose, barberID }) {
 						✕
 					</button>
 				</div>
-				{/* <CreateBarber /> */}
 
-				{console.log(barberID)}
-
-				<EditBarber barberID={barberID} />
+				{children}
 			</div>
 		</section>
 	)
