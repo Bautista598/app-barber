@@ -4,9 +4,6 @@ import BarberTable from '../components/BarberTable'
 import ModalConfig from '../components/DashboardComponents/ModalConfig'
 import EditBarber from '../components/DashboardComponents/EditBarber'
 
-const earnTod = 25000
-const custTod = 75
-
 function Dashboard() {
 	const [isModalOpen, setIsModalOpen] = useState(false)
 	const [selectedBarberId, setSelectedBarberId] = useState(null)
@@ -26,7 +23,7 @@ function Dashboard() {
 			<div className="min-h-full  ">
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
 					<div className="">
-						<StatsCards earnTod={earnTod} custTod={custTod} />
+						<StatsCards />
 					</div>
 
 					<div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
