@@ -2,6 +2,7 @@ import { useState } from 'react'
 import StatsCards from '../components/StatsCards'
 import BarberTable from '../components/BarberTable'
 import ModalConfig from '../components/DashboardComponents/ModalConfig'
+import EditBarber from '../components/DashboardComponents/EditBarber'
 
 const earnTod = 25000
 const custTod = 75
@@ -38,11 +39,9 @@ function Dashboard() {
 						<BarberTable onEditBarber={handleOpenModal} />
 					</div>
 				</main>
-				<ModalConfig
-					isOpen={isModalOpen}
-					onClose={handleCloseModal}
-					barberID={selectedBarberId}
-				/>
+				<ModalConfig isOpen={isModalOpen} onClose={handleCloseModal}>
+					<EditBarber barberID={selectedBarberId} />
+				</ModalConfig>
 			</div>
 		</>
 	)
