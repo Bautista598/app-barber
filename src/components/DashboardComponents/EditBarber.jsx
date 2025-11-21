@@ -19,7 +19,7 @@ function EditBarber({ barberID }) {
 		name: '',
 		occupation: '',
 		specialty: '',
-		rate: 0,
+
 		timeStart: '',
 		timeEnd: '',
 		selectBranch: '',
@@ -132,7 +132,7 @@ function EditBarber({ barberID }) {
 	return (
 		<div className="max-w-xl mx-auto p-6 rounded-lg mt-10 bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
 			<h2 className="text-2xl font-bold mb-6 text-white border-b pb-2">
-				Editar barbero - {formData.name} ({barberID})
+				Editar barbero - {formData.name}
 			</h2>
 			<form onSubmit={handleSubmit} noValidate className="space-y-4">
 				<div>
@@ -175,8 +175,6 @@ function EditBarber({ barberID }) {
 					error={errors.specialty}
 					value={formData.specialty}
 				/>
-
-				<RateBarber />
 
 				<div className="">
 					<label
